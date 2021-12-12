@@ -3,10 +3,10 @@ export generate_compile_time_mpi_constants, libload_time_mpi_constants, libmpi, 
 
 using CompilerSupportLibraries_jll
 JLLWrappers.@generate_wrapper_header("MPItrampoline")
-JLLWrappers.@declare_executable_product(generate_compile_time_mpi_constants)
 JLLWrappers.@declare_library_product(libload_time_mpi_constants, "@rpath/libload_time_mpi_constants.dylib")
-JLLWrappers.@declare_library_product(libmpi, "@rpath/libmpi.2.7.0.dylib")
-JLLWrappers.@declare_library_product(libmpifort, "@rpath/libmpifort.2.7.0.dylib")
+JLLWrappers.@declare_library_product(libmpi, "@rpath/libmpi.2.8.0.dylib")
+JLLWrappers.@declare_library_product(libmpifort, "@rpath/libmpifort.2.8.0.dylib")
+JLLWrappers.@declare_executable_product(generate_compile_time_mpi_constants)
 JLLWrappers.@declare_executable_product(mpicc)
 JLLWrappers.@declare_executable_product(mpich_mpiexec)
 JLLWrappers.@declare_executable_product(mpicxx)
@@ -16,11 +16,6 @@ JLLWrappers.@declare_executable_product(mpifort)
 JLLWrappers.@declare_executable_product(mpiwrapperexec)
 function __init__()
     JLLWrappers.@generate_init_header(CompilerSupportLibraries_jll)
-    JLLWrappers.@init_executable_product(
-        generate_compile_time_mpi_constants,
-        "bin/generate_compile_time_mpi_constants",
-    )
-
     JLLWrappers.@init_library_product(
         libload_time_mpi_constants,
         "lib/libload_time_mpi_constants.dylib",
@@ -29,14 +24,19 @@ function __init__()
 
     JLLWrappers.@init_library_product(
         libmpi,
-        "lib/libmpi.2.7.0.dylib",
+        "lib/libmpi.2.8.0.dylib",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
 
     JLLWrappers.@init_library_product(
         libmpifort,
-        "lib/libmpifort.2.7.0.dylib",
+        "lib/libmpifort.2.8.0.dylib",
         RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_executable_product(
+        generate_compile_time_mpi_constants,
+        "bin/generate_compile_time_mpi_constants",
     )
 
     JLLWrappers.@init_executable_product(
