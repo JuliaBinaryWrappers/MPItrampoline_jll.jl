@@ -4,7 +4,7 @@ export generate_compile_time_mpi_constants, libload_time_mpi_constants, libmpi, 
 using CompilerSupportLibraries_jll
 JLLWrappers.@generate_wrapper_header("MPItrampoline")
 JLLWrappers.@declare_library_product(libload_time_mpi_constants, "libload_time_mpi_constants.so")
-JLLWrappers.@declare_library_product(libmpi, "libmpi.so.3.3.1")
+JLLWrappers.@declare_library_product(libmpi, "libmpitrampoline.so.4.0.2")
 JLLWrappers.@declare_executable_product(generate_compile_time_mpi_constants)
 JLLWrappers.@declare_executable_product(mpicc)
 JLLWrappers.@declare_executable_product(mpich_mpiexec)
@@ -23,7 +23,7 @@ function __init__()
 
     JLLWrappers.@init_library_product(
         libmpi,
-        "lib/libmpi.so",
+        "lib/libmpitrampoline.so",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
 
