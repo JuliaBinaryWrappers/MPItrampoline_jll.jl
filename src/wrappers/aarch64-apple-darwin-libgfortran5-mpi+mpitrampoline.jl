@@ -4,7 +4,7 @@ export libmpi, mpicc, mpich_mpiexec, mpicxx, mpiexec, mpifc, mpifort, mpiwrapper
 using CompilerSupportLibraries_jll
 using MPIPreferences
 JLLWrappers.@generate_wrapper_header("MPItrampoline")
-JLLWrappers.@declare_library_product(libmpi, "@rpath/libmpitrampoline.4.0.2.dylib")
+JLLWrappers.@declare_library_product(libmpi, "@rpath/libmpitrampoline.4.1.1.dylib")
 JLLWrappers.@declare_executable_product(mpicc)
 JLLWrappers.@declare_executable_product(mpich_mpiexec)
 JLLWrappers.@declare_executable_product(mpicxx)
@@ -16,7 +16,7 @@ function __init__()
     JLLWrappers.@generate_init_header(CompilerSupportLibraries_jll, MPIPreferences)
     JLLWrappers.@init_library_product(
         libmpi,
-        "lib/libmpitrampoline.4.0.2.dylib",
+        "lib/libmpitrampoline.4.1.1.dylib",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
 

@@ -4,7 +4,7 @@ export libmpi, mpicc, mpich_mpiexec, mpicxx, mpiexec, mpifc, mpifort, mpiwrapper
 using CompilerSupportLibraries_jll
 using MPIPreferences
 JLLWrappers.@generate_wrapper_header("MPItrampoline")
-JLLWrappers.@declare_library_product(libmpi, "libmpitrampoline.so.4.0.2")
+JLLWrappers.@declare_library_product(libmpi, "libmpitrampoline.so.4.1.1")
 JLLWrappers.@declare_executable_product(mpicc)
 JLLWrappers.@declare_executable_product(mpich_mpiexec)
 JLLWrappers.@declare_executable_product(mpicxx)
