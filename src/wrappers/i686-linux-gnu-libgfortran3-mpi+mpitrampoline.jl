@@ -5,7 +5,7 @@ using CompilerSupportLibraries_jll
 using MPIPreferences
 JLLWrappers.@generate_wrapper_header("MPItrampoline")
 JLLWrappers.@declare_library_product(libload_time_mpi_constants, "libload_time_mpi_constants.so")
-JLLWrappers.@declare_library_product(libmpi, "libmpitrampoline.so.4.2.0")
+JLLWrappers.@declare_library_product(libmpi, "libmpitrampoline.so.5")
 JLLWrappers.@declare_executable_product(generate_compile_time_mpi_constants)
 JLLWrappers.@declare_executable_product(mpicc)
 JLLWrappers.@declare_executable_product(mpich_mpiexec)

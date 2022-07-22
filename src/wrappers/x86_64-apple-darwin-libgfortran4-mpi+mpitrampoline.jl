@@ -5,7 +5,7 @@ using CompilerSupportLibraries_jll
 using MPIPreferences
 JLLWrappers.@generate_wrapper_header("MPItrampoline")
 JLLWrappers.@declare_library_product(libload_time_mpi_constants, "@rpath/libload_time_mpi_constants.dylib")
-JLLWrappers.@declare_library_product(libmpi, "@rpath/libmpitrampoline.4.2.0.dylib")
+JLLWrappers.@declare_library_product(libmpi, "@rpath/libmpitrampoline.5.dylib")
 JLLWrappers.@declare_executable_product(generate_compile_time_mpi_constants)
 JLLWrappers.@declare_executable_product(mpicc)
 JLLWrappers.@declare_executable_product(mpich_mpiexec)
@@ -24,7 +24,7 @@ function __init__()
 
     JLLWrappers.@init_library_product(
         libmpi,
-        "lib/libmpitrampoline.4.2.0.dylib",
+        "lib/libmpitrampoline.5.0.0.dylib",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
 
