@@ -2,6 +2,7 @@
 export generate_compile_time_mpi_constants, libload_time_mpi_constants, libmpi, mpicc, mpich_mpiexec, mpicxx, mpiexec, mpifc, mpifort, mpiwrapperexec
 
 using CompilerSupportLibraries_jll
+using MPIPreferences
 JLLWrappers.@generate_wrapper_header("MPItrampoline")
 JLLWrappers.@declare_library_product(libload_time_mpi_constants, "@rpath/libload_time_mpi_constants.dylib")
 JLLWrappers.@declare_library_product(libmpi, "@rpath/libmpitrampoline.5.dylib")
@@ -23,7 +24,7 @@ function __init__()
 
     JLLWrappers.@init_library_product(
         libmpi,
-        "lib/libmpitrampoline.5.0.2.dylib",
+        "lib/libmpitrampoline.5.2.1.dylib",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
 
