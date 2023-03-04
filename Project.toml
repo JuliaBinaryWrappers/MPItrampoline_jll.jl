@@ -4,7 +4,6 @@ version = "5.2.1+0"
 
 [deps]
 MPIPreferences = "3da0fdf6-3ccc-4f1b-acd9-58baa6c99267"
-Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 JLLWrappers = "692b3bcd-3c85-4b1f-b108-f13ce0eb3210"
 CompilerSupportLibraries_jll = "e66e0078-7015-5450-92f7-15fbd957f2ae"
 LazyArtifacts = "4af54fe1-eca0-43a8-85a7-787d91b784e3"
