@@ -2,7 +2,6 @@
 export generate_compile_time_mpi_constants, libload_time_mpi_constants, libmpi, mpicc, mpich_mpiexec, mpicxx, mpiexec, mpifc, mpifort, mpiwrapperexec
 
 using CompilerSupportLibraries_jll
-using Hwloc_jll
 JLLWrappers.@generate_wrapper_header("MPItrampoline")
 JLLWrappers.@declare_library_product(libload_time_mpi_constants, "libload_time_mpi_constants.so")
 JLLWrappers.@declare_library_product(libmpi, "libmpitrampoline.so.5")
@@ -15,7 +14,7 @@ JLLWrappers.@declare_executable_product(mpifc)
 JLLWrappers.@declare_executable_product(mpifort)
 JLLWrappers.@declare_executable_product(mpiwrapperexec)
 function __init__()
-    JLLWrappers.@generate_init_header(CompilerSupportLibraries_jll, Hwloc_jll, MPIPreferences)
+    JLLWrappers.@generate_init_header(CompilerSupportLibraries_jll, MPIPreferences)
     JLLWrappers.@init_library_product(
         libload_time_mpi_constants,
         "lib/libload_time_mpi_constants.so",
