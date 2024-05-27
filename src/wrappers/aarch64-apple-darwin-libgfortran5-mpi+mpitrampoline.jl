@@ -23,7 +23,7 @@ function __init__()
 
     JLLWrappers.@init_library_product(
         libmpi,
-        "lib/libmpitrampoline.5.3.1.dylib",
+        "lib/libmpitrampoline.5.4.0.dylib",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
 
