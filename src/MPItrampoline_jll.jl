@@ -8,5 +8,5 @@ Base.include(@__MODULE__, joinpath("..", ".pkg", "platform_augmentation.jl"))
 import JLLWrappers
 
 JLLWrappers.@generate_main_file_header("MPItrampoline")
-JLLWrappers.@generate_main_file("MPItrampoline", UUID("f1f71cc9-e9ae-5b93-9b94-4fe0e1ad3748"))
+JLLWrappers.@generate_main_file("MPItrampoline", Base.UUID("f1f71cc9-e9ae-5b93-9b94-4fe0e1ad3748"))
 end  # module MPItrampoline_jll
